@@ -8,8 +8,7 @@ class TicketResponse extends Data
 {
     public function __construct(
         public int $id,
-    )
-    {
+    ) {
         //
     }
 }

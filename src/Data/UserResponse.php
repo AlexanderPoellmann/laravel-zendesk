@@ -27,8 +27,7 @@ class UserResponse extends Data
         public bool $active = false,
         public bool $suspended = false,
         public bool $restricted_agent = true,
-    )
-    {
+    ) {
         //
     }
 }
