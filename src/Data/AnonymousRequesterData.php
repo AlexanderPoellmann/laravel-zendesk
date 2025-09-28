@@ -12,13 +12,12 @@ class AnonymousRequesterData
         public string $lastName,
         public string $email,
         public ?string $locale = null,
-    )
-    {
+    ) {
         //
     }
 
     public function fullName(): string
     {
-        return $this->lastName . ', ' . $this->firstName;
+        return $this->lastName.', '.$this->firstName;
     }
 }

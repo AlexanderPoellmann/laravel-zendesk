@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Facade;
  * @see \AlexanderPoellmann\LaravelZendesk\Zendesk
  *
  * @mixin \Zendesk\API\HttpClient
+ *
  * @method self authenticate()
  */
 class Zendesk extends Facade

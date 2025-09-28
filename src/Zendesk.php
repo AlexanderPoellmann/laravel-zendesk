@@ -6,9 +6,9 @@ use AlexanderPoellmann\LaravelZendesk\Actions\CreateAnonymousRequest;
 use AlexanderPoellmann\LaravelZendesk\Actions\CreateOrUpdateUser;
 use AlexanderPoellmann\LaravelZendesk\Actions\CreateTicket;
 use AlexanderPoellmann\LaravelZendesk\Actions\UploadAttachment;
+use AlexanderPoellmann\LaravelZendesk\Data\AnonymousRequestData;
 use AlexanderPoellmann\LaravelZendesk\Data\AnonymousRequesterData;
 use AlexanderPoellmann\LaravelZendesk\Data\AttachmentData;
-use AlexanderPoellmann\LaravelZendesk\Data\AnonymousRequestData;
 use AlexanderPoellmann\LaravelZendesk\Data\AttachmentResponse;
 use AlexanderPoellmann\LaravelZendesk\Data\RequestResponse;
 use AlexanderPoellmann\LaravelZendesk\Data\TicketData;
@@ -76,8 +76,7 @@ class Zendesk
         string $email,
         UserRoles $role = UserRoles::EndUser,
         ?string $phone = null,
-    ): ?UserResponse
-    {
+    ): ?UserResponse {
         $userData = new UserData(
             firstName: $firstName,
             lastName: $lastName,
@@ -95,8 +94,7 @@ class Zendesk
         string $filePath,
         string $mimeType,
         string $fileName
-    ): ?AttachmentResponse
-    {
+    ): ?AttachmentResponse {
         $attachmentData = new AttachmentData(
             filePath: $filePath,
             mimeType: $mimeType,
@@ -113,8 +111,7 @@ class Zendesk
         string $body,
         Priorities $priority = Priorities::Normal,
         array $uploads = [],
-    ): ?TicketResponse
-    {
+    ): ?TicketResponse {
         $ticketData = new TicketData(
             subject: $subject,
             body: $body,
@@ -136,8 +133,7 @@ class Zendesk
         string $body,
         Priorities $priority = Priorities::Normal,
         array $uploads = [],
-    ): ?RequestResponse
-    {
+    ): ?RequestResponse {
         $requesterData = new AnonymousRequesterData(
             firstName: $firstName,
             lastName: $lastName,

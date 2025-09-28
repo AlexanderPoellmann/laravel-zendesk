@@ -25,8 +25,7 @@ class RequestResponse extends Data
         public ?int $assignee_id = null,
         public ?int $custom_status_id = null,
         public bool $is_public = false,
-    )
-    {
+    ) {
         //
     }
 }
