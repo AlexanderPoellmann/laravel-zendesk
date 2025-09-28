@@ -16,8 +16,7 @@ class UserResponseData extends Data
         public string $phone,
         public string $locale,
         public string $role,
-    )
-    {
+    ) {
         //
     }
 

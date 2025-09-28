@@ -2,9 +2,9 @@
 
 namespace AlexanderPoellmann\LaravelZendesk;
 
+use AlexanderPoellmann\LaravelZendesk\Actions\CreateOrUpdateUser;
 use AlexanderPoellmann\LaravelZendesk\Actions\CreateRequest;
 use AlexanderPoellmann\LaravelZendesk\Actions\CreateTicket;
-use AlexanderPoellmann\LaravelZendesk\Actions\CreateOrUpdateUser;
 use AlexanderPoellmann\LaravelZendesk\Actions\UploadAttachment;
 use AlexanderPoellmann\LaravelZendesk\Data\AttachmentData;
 use AlexanderPoellmann\LaravelZendesk\Data\RequestData;

@@ -16,8 +16,7 @@ class RequestData
         public string $body,
         public Priorities $priority = Priorities::Normal,
         public array $uploads = [],
-    )
-    {
+    ) {
         //
     }
 }

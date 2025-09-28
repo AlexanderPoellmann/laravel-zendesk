@@ -8,8 +8,7 @@ class AttachmentData
         public string $filePath,
         public string $mimeType,
         public string $fileName,
-    )
-    {
+    ) {
         //
     }
 }
