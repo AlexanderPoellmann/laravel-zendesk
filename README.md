@@ -49,8 +49,34 @@ return [
 ## Usage
 
 See also https://github.com/zendesk/zendesk_api_client_php/blob/master/README.md.
+
 ```php
-$ticket = $client->tickets()->create([
+// Create or update a user
+
+$user = Zendesk::createOrUpdateUser(
+    firstName: 'John',
+    lastName: 'Doe',
+    email: 'john@example.com',
+);
+
+ray($user);
+
+// Create an anonymous request
+
+$request = Zendesk::createAnonymousRequest(
+    firstName: 'John',
+    lastName: 'Doe',
+    email: 'john@example.com',
+    recipientEmailAddress: 'support@example.com',
+    subject: 'Help!',
+    body: '"My printer is on fire!',
+);
+
+ray($request);
+
+// Create a ticket directly
+
+$ticket = Zendesk::authenticate()->tickets()->create([
     'subject'  => 'The quick brown fox jumps over the lazy dog',
     'comment'  => [
         'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, ' .
@@ -58,6 +84,7 @@ $ticket = $client->tickets()->create([
     ],
     'priority' => 'normal'
 ]);
+
 ray($ticket);
 ```
 

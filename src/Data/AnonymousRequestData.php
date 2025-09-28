@@ -7,10 +7,10 @@ use AlexanderPoellmann\LaravelZendesk\Enums\Priorities;
 /**
  * @see https://developer.zendesk.com/api-reference/ticketing/tickets/ticket-requests/#json-format
  */
-class RequestData
+class AnonymousRequestData
 {
     public function __construct(
-        public int $userId,
+        public AnonymousRequesterData $requester,
         public string $recipientEmailAddress,
         public string $subject,
         public string $body,
