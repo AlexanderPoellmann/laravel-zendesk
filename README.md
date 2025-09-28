@@ -33,6 +33,18 @@ return [
 ];
 ```
 
+Don't forget to add the following to your `config/services.php`:
+
+```php
+return [
+    'zendesk' => [
+        'subdomain' => env('ZENDESK_SUBDOMAIN', null),
+        'username' => env('ZENDESK_USERNAME', null),
+        'token' => env('ZENDESK_TOKEN', null)
+    ],
+];
+```
+
 ## Usage
 
 ```php
