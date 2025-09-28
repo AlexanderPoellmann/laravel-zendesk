@@ -17,6 +17,7 @@ class CreateAnonymousRequest
                     'name' => $data->requester->fullName(),
                     'email' => $data->requester->email,
                 ],
+                'recipient' => $data->recipientEmailAddress,
                 'subject' => $data->subject,
                 'comment' => [
                     'body' => $data->body,
