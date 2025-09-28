@@ -3,8 +3,8 @@
 namespace AlexanderPoellmann\LaravelZendesk;
 
 use AlexanderPoellmann\LaravelZendesk\Actions\CreateAnonymousRequest;
-use AlexanderPoellmann\LaravelZendesk\Actions\CreateTicket;
 use AlexanderPoellmann\LaravelZendesk\Actions\CreateOrUpdateUser;
+use AlexanderPoellmann\LaravelZendesk\Actions\CreateTicket;
 use AlexanderPoellmann\LaravelZendesk\Actions\UploadAttachment;
 use AlexanderPoellmann\LaravelZendesk\Data\AnonymousRequesterData;
 use AlexanderPoellmann\LaravelZendesk\Data\AttachmentData;

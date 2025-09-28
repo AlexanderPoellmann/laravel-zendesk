@@ -12,13 +12,12 @@ class UserData
         public string $email,
         public UserRoles $role = UserRoles::EndUser,
         public ?string $phone = null,
-    )
-    {
+    ) {
         //
     }
 
     public function fullName(): string
     {
-        return $this->lastName . ', ' . $this->firstName;
+        return $this->lastName.', '.$this->firstName;
     }
 }
