@@ -2,9 +2,9 @@
 
 namespace AlexanderPoellmann\LaravelZendesk\Tests;
 
+use AlexanderPoellmann\LaravelZendesk\LaravelZendeskServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use AlexanderPoellmann\LaravelZendesk\LaravelZendeskServiceProvider;
 
 class TestCase extends Orchestra
 {
