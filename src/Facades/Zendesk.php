@@ -4,13 +4,15 @@ namespace AlexanderPoellmann\LaravelZendesk\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
+
 /**
- * @see \AlexanderPoellmann\LaravelZendesk\LaravelZendesk
+ * @see \AlexanderPoellmann\LaravelZendesk\Zendesk
+ * @mixin \Zendesk\API\HttpClient
  */
-class LaravelZendesk extends Facade
+class Zendesk extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \AlexanderPoellmann\LaravelZendesk\LaravelZendesk::class;
+        return \AlexanderPoellmann\LaravelZendesk\Zendesk::class;
     }
 }

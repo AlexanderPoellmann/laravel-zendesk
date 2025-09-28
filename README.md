@@ -30,6 +30,7 @@ This is the contents of the published config file:
 
 ```php
 return [
+    //
 ];
 ```
 
@@ -47,7 +48,17 @@ return [
 
 ## Usage
 
+See also https://github.com/zendesk/zendesk_api_client_php/blob/master/README.md.
 ```php
+$ticket = $client->tickets()->create([
+    'subject'  => 'The quick brown fox jumps over the lazy dog',
+    'comment'  => [
+        'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, ' .
+                  'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    ],
+    'priority' => 'normal'
+]);
+ray($ticket);
 ```
 
 ## Testing

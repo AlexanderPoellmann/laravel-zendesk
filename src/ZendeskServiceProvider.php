@@ -5,7 +5,7 @@ namespace AlexanderPoellmann\LaravelZendesk;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class LaravelZendeskServiceProvider extends PackageServiceProvider
+class ZendeskServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
