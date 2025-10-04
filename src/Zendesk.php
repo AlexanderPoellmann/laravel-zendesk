@@ -9,10 +9,10 @@ use AlexanderPoellmann\LaravelZendesk\Actions\UploadAttachment;
 use AlexanderPoellmann\LaravelZendesk\Data\AnonymousRequestData;
 use AlexanderPoellmann\LaravelZendesk\Data\AnonymousRequesterData;
 use AlexanderPoellmann\LaravelZendesk\Data\AttachmentData;
-use AlexanderPoellmann\LaravelZendesk\Data\AttachmentResponse;
 use AlexanderPoellmann\LaravelZendesk\Data\RequestResponse;
 use AlexanderPoellmann\LaravelZendesk\Data\TicketData;
 use AlexanderPoellmann\LaravelZendesk\Data\TicketResponse;
+use AlexanderPoellmann\LaravelZendesk\Data\UploadResponse;
 use AlexanderPoellmann\LaravelZendesk\Data\UserData;
 use AlexanderPoellmann\LaravelZendesk\Data\UserResponse;
 use AlexanderPoellmann\LaravelZendesk\Enums\Priorities;
@@ -94,7 +94,7 @@ class Zendesk
         string $filePath,
         string $mimeType,
         string $fileName
-    ): ?AttachmentResponse {
+    ): ?UploadResponse {
         $attachmentData = new AttachmentData(
             filePath: $filePath,
             mimeType: $mimeType,
