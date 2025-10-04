@@ -81,8 +81,8 @@ class Zendesk
             firstName: $firstName,
             lastName: $lastName,
             email: $email,
-            role: $role,
             phone: $phone,
+            role: $role,
         );
 
         return resolve(CreateOrUpdateUser::class)->execute(

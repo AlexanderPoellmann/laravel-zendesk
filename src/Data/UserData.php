@@ -10,8 +10,8 @@ class UserData
         public string $firstName,
         public string $lastName,
         public string $email,
-        public UserRoles $role = UserRoles::EndUser,
         public ?string $phone = null,
+        public UserRoles $role = UserRoles::EndUser,
     ) {
         //
     }
