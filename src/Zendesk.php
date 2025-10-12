@@ -70,7 +70,7 @@ class Zendesk
         return $this->client->{$method}(...$arguments);
     }
 
-    public function createOrUpdateUser(
+    public static function createOrUpdateUser(
         string $firstName,
         string $lastName,
         string $email,
@@ -90,7 +90,7 @@ class Zendesk
         );
     }
 
-    public function uploadAttachment(
+    public static function uploadAttachment(
         string $filePath,
         string $mimeType,
         string $fileName
@@ -106,7 +106,7 @@ class Zendesk
         );
     }
 
-    public function createTicket(
+    public static function createTicket(
         string $subject,
         string $body,
         Priorities $priority = Priorities::Normal,
@@ -124,7 +124,7 @@ class Zendesk
         );
     }
 
-    public function createAnonymousRequest(
+    public static function createAnonymousRequest(
         string $firstName,
         string $lastName,
         string $email,

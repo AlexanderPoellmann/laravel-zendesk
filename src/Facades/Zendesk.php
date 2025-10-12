@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Facade;
  *
  * @method void configureClient()
  * @method self authenticate()
- * @method null|UserResponse createOrUpdateUser(string $firstName, string $lastName, string $email, UserRoles $role = UserRoles::EndUser, null|string $phone = null)
- * @method null|UploadResponse uploadAttachment(string $filePath, string $mimeType, string $fileName)
- * @method null|TicketResponse createTicket(string $subject, string $body, Priorities $priority = Priorities::Normal, array $uploads = [])
- * @method null|RequestResponse createAnonymousRequest(string $firstName, string $lastName, string $email, string $recipientEmailAddress, string $subject, string $body, Priorities $priority = Priorities::Normal, array $uploads = [])
+ * @method static null|UserResponse createOrUpdateUser(string $firstName, string $lastName, string $email, UserRoles $role = UserRoles::EndUser, null|string $phone = null)
+ * @method static null|UploadResponse uploadAttachment(string $filePath, string $mimeType, string $fileName)
+ * @method static null|TicketResponse createTicket(string $subject, string $body, Priorities $priority = Priorities::Normal, array $uploads = [])
+ * @method static null|RequestResponse createAnonymousRequest(string $firstName, string $lastName, string $email, string $recipientEmailAddress, string $subject, string $body, Priorities $priority = Priorities::Normal, array $uploads = [])
  */
 class Zendesk extends Facade
 {

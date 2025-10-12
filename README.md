@@ -61,6 +61,18 @@ $user = Zendesk::createOrUpdateUser(
 
 ray($user);
 
+// Upload an attachment.
+
+$media = $model->getFirstMedia(); // e.g. spatie/laravel-medialibrary
+
+$upload = Zendesk::uploadAttachment(
+    filePath: $media->getPath(),
+    mimeType: $media->mime_type,
+    fileName: $media->file_name,
+);
+
+ray($upload);
+
 // Create an anonymous request
 
 $request = Zendesk::createAnonymousRequest(
@@ -70,13 +82,26 @@ $request = Zendesk::createAnonymousRequest(
     recipientEmailAddress: 'support@example.com',
     subject: 'Help!',
     body: '"My printer is on fire!',
+    uploads: [$upload->token], // optional
 );
 
 ray($request);
 
-// Create a ticket directly
+// Create a ticket
 
-$ticket = Zendesk::authenticate()->tickets()->create([
+$ticket = Zendesk::createTicket(
+    subject: 'The quick brown fox jumps over the lazy dog',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, ' .
+          'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    priority: Priorities::Normal,
+    uploads: [$upload->token], // optional
+]);
+
+ray($ticket);
+
+// Create a ticket by directly accessing the Zendesk API clients tickets() method
+
+$ticket = resolve(Zendesk::class)->authenticate()->tickets()->create([
     'subject'  => 'The quick brown fox jumps over the lazy dog',
     'comment'  => [
         'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, ' .
@@ -87,6 +112,8 @@ $ticket = Zendesk::authenticate()->tickets()->create([
 
 ray($ticket);
 ```
+
+Through the `Zendesk` facade you may access any methods available on the `Zendesk\API\Client` class ([documentation](https://github.com/zendesk/zendesk_api_client_php#usage)).
 
 ## Testing
 

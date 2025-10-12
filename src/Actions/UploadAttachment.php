@@ -12,7 +12,7 @@ class UploadAttachment
     public function execute(AttachmentData $data): ?UploadResponse
     {
         try {
-            $response = Zendesk::attachments()->upload([
+            $response = resolve(Zendesk::class)->attachments()->upload([
                 'file' => $data->filePath,
                 'type' => $data->mimeType,
                 'name' => $data->fileName,

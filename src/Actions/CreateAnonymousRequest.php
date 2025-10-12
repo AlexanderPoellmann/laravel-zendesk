@@ -12,7 +12,7 @@ class CreateAnonymousRequest
     public function execute(AnonymousRequestData $data): ?RequestResponse
     {
         try {
-            $response = Zendesk::requests()->create([
+            $response = resolve(Zendesk::class)->requests()->create([
                 'requester' => [
                     'name' => $data->requester->fullName(),
                     'email' => $data->requester->email,
