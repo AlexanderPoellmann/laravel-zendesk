@@ -2,6 +2,12 @@
 
 namespace AlexanderPoellmann\LaravelZendesk\Facades;
 
+use AlexanderPoellmann\LaravelZendesk\Data\RequestResponse;
+use AlexanderPoellmann\LaravelZendesk\Data\TicketResponse;
+use AlexanderPoellmann\LaravelZendesk\Data\UploadResponse;
+use AlexanderPoellmann\LaravelZendesk\Data\UserResponse;
+use AlexanderPoellmann\LaravelZendesk\Enums\Priorities;
+use AlexanderPoellmann\LaravelZendesk\Enums\UserRoles;
 use Illuminate\Support\Facades\Facade;
 
 /**
@@ -9,7 +15,12 @@ use Illuminate\Support\Facades\Facade;
  *
  * @mixin \Zendesk\API\HttpClient
  *
+ * @method void configureClient()
  * @method self authenticate()
+ * @method null|UserResponse createOrUpdateUser(string $firstName, string $lastName, string $email, UserRoles $role = UserRoles::EndUser, null|string $phone = null)
+ * @method null|UploadResponse uploadAttachment(string $filePath, string $mimeType, string $fileName)
+ * @method null|TicketResponse createTicket(string $subject, string $body, Priorities $priority = Priorities::Normal, array $uploads = [])
+ * @method null|RequestResponse createAnonymousRequest(string $firstName, string $lastName, string $email, string $recipientEmailAddress, string $subject, string $body, Priorities $priority = Priorities::Normal, array $uploads = [])
  */
 class Zendesk extends Facade
 {
