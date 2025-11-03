@@ -4,7 +4,6 @@ namespace AlexanderPoellmann\LaravelZendesk\Actions;
 
 use AlexanderPoellmann\LaravelZendesk\Data\TicketData;
 use AlexanderPoellmann\LaravelZendesk\Data\TicketResponse;
-use AlexanderPoellmann\LaravelZendesk\Facades\Zendesk;
 use Exception;
 use Zendesk\API\Exceptions\ApiResponseException;
 use Zendesk\API\Exceptions\AuthException;

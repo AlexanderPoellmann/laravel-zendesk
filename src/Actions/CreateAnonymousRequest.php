@@ -4,7 +4,6 @@ namespace AlexanderPoellmann\LaravelZendesk\Actions;
 
 use AlexanderPoellmann\LaravelZendesk\Data\AnonymousRequestData;
 use AlexanderPoellmann\LaravelZendesk\Data\RequestResponse;
-use AlexanderPoellmann\LaravelZendesk\Facades\Zendesk;
 use Exception;
 
 class CreateAnonymousRequest

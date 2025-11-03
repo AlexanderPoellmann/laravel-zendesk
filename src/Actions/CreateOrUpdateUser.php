@@ -4,7 +4,6 @@ namespace AlexanderPoellmann\LaravelZendesk\Actions;
 
 use AlexanderPoellmann\LaravelZendesk\Data\UserData;
 use AlexanderPoellmann\LaravelZendesk\Data\UserResponse;
-use AlexanderPoellmann\LaravelZendesk\Facades\Zendesk;
 use Exception;
 
 class CreateOrUpdateUser

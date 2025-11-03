@@ -24,15 +24,13 @@ use Zendesk\API\HttpClient;
 /** @mixin HttpClient */
 class Zendesk
 {
-
     protected HttpClient $client;
 
     public function __construct(
         protected string $subdomain,
         protected ?string $username,
         protected string $token,
-    )
-    {
+    ) {
 
         $this->configureClient();
     }
