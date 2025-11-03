@@ -21,21 +21,18 @@ use AlexanderPoellmann\LaravelZendesk\Exceptions\ZendeskException;
 use Zendesk\API\Exceptions\AuthException;
 use Zendesk\API\HttpClient;
 
+/** @mixin HttpClient */
 class Zendesk
 {
-    protected string $subdomain;
-
-    protected ?string $username;
-
-    protected string $token;
 
     protected HttpClient $client;
 
-    public function __construct()
+    public function __construct(
+        protected string $subdomain,
+        protected ?string $username,
+        protected string $token,
+    )
     {
-        $this->subdomain = config('services.zendesk.subdomain');
-        $this->username = config('services.zendesk.username');
-        $this->token = config('services.zendesk.token');
 
         $this->configureClient();
     }

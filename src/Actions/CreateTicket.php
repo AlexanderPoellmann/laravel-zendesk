@@ -15,7 +15,7 @@ class CreateTicket
     public function execute(TicketData $data): ?TicketResponse
     {
         try {
-            $response = resolve(Zendesk::class)->authenticate()->tickets()->create([
+            $response = zendesk()->authenticate()->tickets()->create([
                 'subject' => $data->subject,
                 'comment' => [
                     'body' => $data->body,

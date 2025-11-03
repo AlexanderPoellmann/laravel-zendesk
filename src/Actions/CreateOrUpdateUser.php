@@ -12,7 +12,7 @@ class CreateOrUpdateUser
     public function execute(UserData $data): ?UserResponse
     {
         try {
-            $response = resolve(Zendesk::class)->authenticate()->users()->createOrUpdate([
+            $response = zendesk()->authenticate()->users()->createOrUpdate([
                 'name' => $data->fullName(),
                 'email' => $data->email,
                 'phone' => $data->phone ?? '',

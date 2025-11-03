@@ -39,7 +39,10 @@
     "autoload": {
         "psr-4": {
             "AlexanderPoellmann\\LaravelZendesk\\": "src/"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

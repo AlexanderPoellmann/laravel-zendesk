@@ -51,9 +51,19 @@ return [
 See also https://github.com/zendesk/zendesk_api_client_php/blob/master/README.md.
 
 ```php
+// Basic usage
+
+use AlexanderPoellmann\LaravelZendesk\Zendesk;
+
+$zendesk = app(Zendesk::class);
+
+// or
+
+$zendesk = zendesk();
+
 // Create or update a user
 
-$user = Zendesk::createOrUpdateUser(
+$user = zendesk()->createOrUpdateUser(
     firstName: 'John',
     lastName: 'Doe',
     email: 'john@example.com',
@@ -65,7 +75,7 @@ ray($user);
 
 $media = $model->getFirstMedia(); // e.g. spatie/laravel-medialibrary
 
-$upload = Zendesk::uploadAttachment(
+$upload = zendesk()->uploadAttachment(
     filePath: $media->getPath(),
     mimeType: $media->mime_type,
     fileName: $media->file_name,
@@ -75,7 +85,7 @@ ray($upload);
 
 // Create an anonymous request
 
-$request = Zendesk::createAnonymousRequest(
+$request = zendesk()->createAnonymousRequest(
     firstName: 'John',
     lastName: 'Doe',
     email: 'john@example.com',
@@ -89,7 +99,7 @@ ray($request);
 
 // Create a ticket
 
-$ticket = Zendesk::createTicket(
+$ticket = zendesk()->createTicket(
     subject: 'The quick brown fox jumps over the lazy dog',
     body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, ' .
           'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -101,7 +111,7 @@ ray($ticket);
 
 // Create a ticket by directly accessing the Zendesk API clients tickets() method
 
-$ticket = resolve(Zendesk::class)->authenticate()->tickets()->create([
+$ticket = zendesk()->authenticate()->tickets()->create([
     'subject'  => 'The quick brown fox jumps over the lazy dog',
     'comment'  => [
         'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, ' .
